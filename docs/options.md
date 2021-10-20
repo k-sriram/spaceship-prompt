@@ -11,6 +11,14 @@ Colors for sections can be [basic colors](https://wiki.archlinux.org/index.php/z
 
 **Note:** the symbol `·` in this document represents a regular space character ` `, it is used to clearly indicate when an option default value starts or ends with a space.
 
+These options can be defined in any of the following places:
+
+- in a custom style file stored in `$SPACESHIP_CUSTOM/styles`. This style needs to be loaded. See [Styles](./Styles.md)(Sect. Loading a style).
+- in `.zshrc`.
+- on the terminal to make temporary but live changes.
+- in the file `$SPACESHIP_CUSTOM/styles/custom.zsh`. This is the file for end-user customisations.
+- in the file `$SPACESHIP_CUSTOM/styles/custom_default.zsh`. This is loaded before loading the default base theme. This is for minor adjustments only. Don't use `spaceship::load_style` in this file.
+
 ### Order
 
 You can specify the order of prompt section using `SPACESHIP_PROMPT_ORDER` option. Use Zsh array syntax to define your own prompt order.
@@ -614,13 +622,13 @@ Shows the active Terraform wokspace in directories that contain `.terraform/envi
 
 Shows the selected IBM Cloud account by looking up with `ibmcloud target`.
 
-| Variable | Default | Meaning |
-| :------- | :-----: | ------- |
-| `SPACESHIP_IBMCLOUD_SHOW` | `false` | Current IBM Cloud section |
-| `SPACESHIP_IBMCLOUD_PREFIX` | `using·` | Prefix before IBM Cloud section |
-| `SPACESHIP_IBMCLOUD_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after IBM Cloud section |
-| `SPACESHIP_IBMCLOUD_SYMBOL` | `👔·` | Character to be shown before IBM Cloud section |
-| `SPACESHIP_IBMCLOUD_COLOR` | `039` | Color of IBM Cloud section |
+| Variable                    |              Default               | Meaning                                        |
+| :-------------------------- | :--------------------------------: | ---------------------------------------------- |
+| `SPACESHIP_IBMCLOUD_SHOW`   |              `false`               | Current IBM Cloud section                      |
+| `SPACESHIP_IBMCLOUD_PREFIX` |              `using·`              | Prefix before IBM Cloud section                |
+| `SPACESHIP_IBMCLOUD_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after IBM Cloud section                 |
+| `SPACESHIP_IBMCLOUD_SYMBOL` |               `👔·`                | Character to be shown before IBM Cloud section |
+| `SPACESHIP_IBMCLOUD_COLOR`  |               `039`                | Color of IBM Cloud section                     |
 
 ### Execution time (`exec_time`)
 

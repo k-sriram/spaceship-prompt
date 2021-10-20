@@ -283,10 +283,21 @@ prompt spaceship
 
 Spaceship works well out of the box, but you can customize almost everything if you want.
 
-- [**Options**](./docs/options.md) — Tweak section's behavior with tons of options.
-- [**API**](./docs/api.md) — Define a custom section that will do exactly what you want.
+- [**Options**](./docs/Options.md) — Tweak section's behavior with tons of options.
+- [**API**](./docs/API.md) — Define a custom section that will do exactly what you want.
+- [**Styles**](./docs/Styles.md) — A collection of [options](./docs/Options.md) which can be shared with others.
 
-You have the ability to customize or disable specific elements of Spaceship. Set options and define new sections in your `.zshrc` file, **after** the theme. To include a custom section you have defined in your prompt, add it to the `SPACESHIP_PROMPT_ORDER`.
+You have ability to customize or disable specific elements of Spaceship. These customisations can be stored in the `$SPACESHIP_CUSTOM` (defaults to `$HOME/.spaceship`) directory under subdirectories `sections` and `styles` appropriately. If you want to change the custom directory add the following to your `.zshrc` **before** the line where the theme is set:
+
+```zsh
+SPACESHIP_CUSTOM=/path/to/your/custom/directory
+```
+
+Custom [options](./docs/Options.md) can also be set in the `$SPACESHIP_CUSTOM/styles/custom.zsh`. If you want to load a style by default add the following to `$SPACESHIP_CUSTOM/styles/custom.zsh`:
+
+```zsh
+spaceship::load_style example
+```
 
 For example:
 
